@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full Stack Developer Portfolio</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+  <h1 class="title">Full Stack Development Portfolio</h1>
+  <p class="subtitle">
+    Welcome! This ePortfolio showcases my comprehensive understanding of modern web technologies, including <strong>HTML</strong>, <strong>CSS</strong>, <strong>Bootstrap</strong>, and <strong>JavaScript</strong>. Through this portfolio, I demonstrate both theoretical knowledge and practical application of these technologies in creating fully functional, responsive, and interactive websites.
+  </p>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="fullstack.html">Full Stack</a></li>
+    <li><a href="html.html">HTML</a></li>
+    <li><a href="css.html">CSS</a></li>
+    <li><a href="bootstrap.html">Bootstrap</a></li>
+    <li><a href="javascript.html">JavaScript</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <h2>Welcome to My Developer Portfolio</h2>
+  <p>
+    This portfolio serves as a demonstration of my ability to build and design full stack web applications. Each section explains the core concepts of the technology, provides hands-on examples, and illustrates how these tools combine to create dynamic, visually appealing, and user-friendly websites. My goal is to highlight the depth of my knowledge as well as my practical skills in modern web development.
+  </p>
+  <button onclick="showWelcome()">Explore Portfolio</button>
+  <p id="message"></p>
+</section>
+
+<section>
+  <h2>Skills Demonstrated</h2>
+  <div class="card">
+    <ul>
+      <li>
+        <strong>HTML page structure and semantic elements:</strong> Demonstrated knowledge of creating organized and accessible content using headings, paragraphs, lists, links, images, and semantic tags.
+      </li>
+      <li>
+        <strong>CSS styling and layout design:</strong> Ability to create visually appealing webpages using styling, flexbox, grid systems, responsive design, animations, and transitions.
+      </li>
+      <li>
+        <strong>Bootstrap responsive grid system:</strong> Proficiency in designing layouts that adapt to multiple screen sizes using Bootstrap’s pre-defined classes and components for mobile-first design.
+      </li>
+      <li>
+        <strong>JavaScript interactive functionality:</strong> Skills in implementing client-side interactivity, handling events, form validations, and dynamic content updates.
+      </li>
+      <li>
+        <strong>Dynamic webpage behaviour using DOM manipulation:</strong> Experience in modifying, adding, or removing webpage elements dynamically using JavaScript to improve user experience and application functionality.
+      </li>
+    </ul>
+  </div>
+</section>
+
+<script>
+  function showWelcome() {
+    document.getElementById('message').innerText = "Thank you for visiting! Explore each section to see examples of my work.";
+  }
+</script>
+
+</body>
+</html>
