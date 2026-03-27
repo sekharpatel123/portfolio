@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavaScript Interactive Demonstration</title>
+
+<style>
+/* YOUR CSS (UNCHANGED) */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Inter:wght@300;400;500&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #f0f4f8;
+  color: #1a1a1a;
+  overflow-x: hidden;
+}
+
+header {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #0072ff, #001f3f);
+  color: #fff;
+  border-radius: 0 0 25px 25px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  animation: headerGlow 5s infinite alternate;
+}
+
+@keyframes headerGlow {
+  0% { box-shadow: 0 5px 20px rgba(0,114,255,0.2); }
+  100% { box-shadow: 0 10px 30px rgba(0,114,255,0.6); }
+}
+
+header h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 48px;
+}
+
+header p {
+  font-size: 18px;
+  color: #d0e6ff;
+}
+
+.card {
+  width: 95%;
+  margin: 30px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+  transition: 0.5s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  background: linear-gradient(135deg, #001f3f, #003366);
+  color: #fff;
+}
+
+button {
+  padding: 12px 20px;
+  border-radius: 50px;
+  border: 2px solid #0072ff;
+  background: linear-gradient(90deg, #0072ff, #001f3f);
+  color: #fff;
+  cursor: pointer;
+}
+
+input {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 10px;
+  border: 2px solid #0072ff;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin: 10px 0;
+  padding: 10px;
+  background: #f1f1f1;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>JavaScript Interactive Demonstration</h1>
+  <p>
+    JavaScript is a high-level programming language that enables developers to create dynamic and interactive web pages. Unlike HTML and CSS, which handle structure and style, JavaScript adds logic and interactivity.
+  </p>
+</header>
+
+<!-- Example 1 -->
+<section class="card">
+  <h2>Example 1: Displaying a Message</h2>
+  <p>
+    This example demonstrates a simple interaction where clicking a button updates the content of a paragraph dynamically. It introduces the concept of event handling and DOM manipulation.
+  </p>
+  <button onclick="showMessage()">Click Me</button>
+  <p id="output" style="color:#2a9d8f; font-weight:bold;"></p>
+  <p>
+    Here, the <code>showMessage()</code> function accesses the paragraph element using <code>document.getElementById()</code> and modifies its <code>innerText</code> property. This shows how JavaScript can instantly update content without reloading the page.
+  </p>
+</section>
+
+<!-- Example 2 -->
+<section class="card">
+  <h2>Example 2: Click Counter</h2>
+  <p>
+    A click counter shows how JavaScript can track state and update content based on user actions. This is useful to understand variables, event handling, and real-time DOM updates.
+  </p>
+  <button onclick="increaseCounter()">Increase Counter</button>
+  <p id="count" style="font-size:1.2em; font-weight:bold; color:#e76f51;">0</p>
+  <p>
+    Each click increments the <code>count</code> variable and updates the displayed number. This demonstrates how JavaScript can maintain and manipulate state to create interactive features.
+  </p>
+</section>
+
+<!-- Example 3 -->
+<section class="card">
+  <h2>Example 3: Changing Styles Dynamically</h2>
+  <p>
+    JavaScript can dynamically change the visual style of HTML elements. This example changes the background color of a box when the button is clicked.
+  </p>
+  <button onclick="changeBoxColor()">Change Box Color</button>
+  <div id="colorBox" style="width:200px; height:100px; background-color:#6dd5ed; margin-top:10px; border-radius:10px;"></div>
+  <p>
+    The <code>changeBoxColor()</code> function selects a random color from an array and applies it to the box's <code>backgroundColor</code>. This demonstrates how JavaScript can manipulate CSS properties to create dynamic and interactive UI elements.
+  </p>
+</section>
+
+<!-- Example 4: To-Do List -->
+<section class="card">
+  <h2>Example 4: To-Do List Application</h2>
+  <p>
+    This To-Do List example shows how JavaScript can create a simple task management system. Users can add tasks, mark them as completed, and remove them dynamically. This demonstrates DOM creation, event handling, and state management.
+  </p>
+  <input type="text" id="taskInput" placeholder="Enter task">
+  <button onclick="addTask()">Add Task</button>
+  <ul id="taskList"></ul>
+  <p>
+    Each task is created using <code>document.createElement()</code> and appended to the list. Clicking a task marks it completed using a strikethrough style, while a delete button allows removing the task. This shows practical use of dynamic DOM manipulation.
+  </p>
+</section>
+
+<!-- Example 5: Calculator -->
+<section class="card">
+  <h2>Example 5: Calculator Application</h2>
+  <p>
+    This calculator demonstrates how JavaScript can process user input to perform arithmetic operations. It uses event handling to capture button clicks, updates the display in real-time, and evaluates the expression when the equal button is clicked.
+  </p>
+  <input type="text" id="calcDisplay" readonly><br><br>
+
+  <button onclick="press('7')">7</button>
+  <button onclick="press('8')">8</button>
+  <button onclick="press('9')">9</button>
+  <button onclick="press('/')">/</button><br><br>
+
+  <button onclick="press('4')">4</button>
+  <button onclick="press('5')">5</button>
+  <button onclick="press('6')">6</button>
+  <button onclick="press('*')">*</button><br><br>
+
+  <button onclick="press('1')">1</button>
+  <button onclick="press('2')">2</button>
+  <button onclick="press('3')">3</button>
+  <button onclick="press('-')">-</button><br><br>
+
+  <button onclick="press('0')">0</button>
+  <button onclick="calculate()">=</button>
+  <button onclick="clearCalc()">C</button>
+  <button onclick="press('+')">+</button>
+
+  <p>
+    The <code>press()</code> function appends digits or operators to the display, <code>calculate()</code> evaluates the expression using <code>eval()</code>, and <code>clearCalc()</code> resets the display. This demonstrates practical computation using JavaScript logic and DOM manipulation.
+  </p>
+</section>
+
+<script>
+// Example 1
+function showMessage() {
+  document.getElementById('output').innerText = "Hello! You clicked the button. 🎉";
+}
+
+// Example 2
+let count = 0;
+function increaseCounter() {
+  count++;
+  document.getElementById('count').innerText = count;
+}
+
+// Example 3
+function changeBoxColor() {
+  const box = document.getElementById('colorBox');
+  const colors = ["#6dd5ed", "#ffb347", "#9b59b6", "#e74c3c", "#2ecc71"];
+  const randomColor = colors[Math.floor(Math.random() * colors.length)];
+  box.style.backgroundColor = randomColor;
+}
+
+// Example 4: To-Do List
+function addTask() {
+  const input = document.getElementById("taskInput");
+  if (!input.value) return;
+  const li = document.createElement("li");
+  li.textContent = input.value;
+
+  li.onclick = () => li.style.textDecoration = "line-through";
+
+  const del = document.createElement("button");
+  del.textContent = "X";
+  del.onclick = (e) => {
+    e.stopPropagation();
+    li.remove();
+  };
+
+  li.appendChild(del);
+  document.getElementById("taskList").appendChild(li);
+  input.value = "";
+}
+
+// Example 5: Calculator
+function press(val) {
+  document.getElementById("calcDisplay").value += val;
+}
+
+function calculate() {
+  document.getElementById("calcDisplay").value =
+    eval(document.getElementById("calcDisplay").value);
+}
+
+function clearCalc() {
+  document.getElementById("calcDisplay").value = "";
+}
+</script>
+
+</body>
+</html>
